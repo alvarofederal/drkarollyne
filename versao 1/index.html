@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Karollyne — Ortopedia e Traumatologia Domiciliar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy:       #14243a;
+      --navy-mid:   #1e3350;
+      --gold:       #b8925a;
+      --gold-light: #d4aa78;
+      --cream:      #f9f6f1;
+      --white:      #ffffff;
+      --gray-soft:  #e8e4dd;
+      --gray-text:  #5a5550;
+      --text-dark:  #1a1612;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--white);
+      color: var(--text-dark);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(20, 36, 58, 0.97);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--white);
+    }
+
+    .logo span {
+      color: var(--gold-light);
+    }
+
+    nav a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      margin-left: 36px;
+      transition: color 0.25s;
+    }
+
+    nav a:hover {
+      color: var(--gold-light);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #243f60 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 70% 50%, rgba(184,146,90,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 80% at 0% 100%, rgba(184,146,90,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* decorative line */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(184,146,90,0.25) 30%, rgba(184,146,90,0.25) 70%, transparent);
+      pointer-events: none;
+    }
+
+    .hero-text {
+      padding: 140px 72px 100px 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 28px;
+      position: relative;
+      padding-left: 44px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .hero-title strong {
+      display: block;
+      font-weight: 600;
+      color: var(--gold-light);
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 40px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.80);
+      max-width: 420px;
+      margin-bottom: 52px;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 40px;
+      border: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 0;
+      z-index: 2;
+    }
+
+    .hero-image-wrap img {
+      height: 92%;
+      max-height: 820px;
+      width: auto;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      filter: brightness(1.04) contrast(1.02);
+    }
+
+    /* soft vignette at bottom of photo */
+    .hero-image-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 180px;
+      background: linear-gradient(to top, var(--navy-mid), transparent);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 52px;
+      right: 56px;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--gold-light);
+      z-index: 10;
+    }
+
+    .hero-badge .amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .hero-badge .label {
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 4px;
+      opacity: 0.8;
+    }
+
+    /* ── DIVIDER ── */
+    .divider-strip {
+      background: var(--gold);
+      padding: 18px 80px;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      overflow: hidden;
+    }
+
+    .divider-strip span {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      white-space: nowrap;
+      opacity: 0.9;
+    }
+
+    .divider-strip span.dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      flex-shrink: 0;
+    }
+
+    /* ── SOBRE ── */
+    .sobre {
+      background: var(--cream);
+      padding: 110px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .sobre-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .sobre-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 2.9rem);
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--navy);
+      margin-bottom: 28px;
+    }
+
+    .sobre-title em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold);
+    }
+
+    .sobre-text {
+      font-size: 0.96rem;
+      font-weight: 300;
+      color: var(--gray-text);
+      line-height: 1.9;
+    }
+
+    .sobre-text p + p {
+      margin-top: 16px;
+    }
+
+    .sobre-visual {
+      position: relative;
+    }
+
+    .sobre-box {
+      background: var(--navy);
+      padding: 52px 44px;
+      color: var(--white);
+      position: relative;
+    }
+
+    .sobre-box::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      width: 80px;
+      height: 80px;
+      border-top: 2px solid var(--gold);
+      border-right: 2px solid var(--gold);
+    }
+
+    .sobre-box::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: -12px;
+      width: 80px;
+      height: 80px;
+      border-bottom: 2px solid var(--gold);
+      border-left: 2px solid var(--gold);
+    }
+
+    .sobre-box .quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 6rem;
+      font-weight: 300;
+      color: var(--gold);
+      opacity: 0.35;
+      line-height: 0.7;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .sobre-box blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .sobre-box cite {
+      display: block;
+      margin-top: 28px;
+      font-style: normal;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    /* ── DIFERENCIAIS ── */
+    .diferenciais {
+      background: var(--white);
+      padding: 110px 80px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+
+    .section-header .label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .section-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 3vw, 2.8rem);
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+
+    .section-header h2 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--gray-soft);
+      border: 1px solid var(--gray-soft);
+    }
+
+    .card {
+      background: var(--white);
+      padding: 48px 40px;
+      transition: background 0.3s;
+      position: relative;
+    }
+
+    .card:hover {
+      background: var(--cream);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 28px;
+      opacity: 0.9;
+    }
+
+    .card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--gray-text);
+      line-height: 1.85;
+    }
+
+    .card-num {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--gold);
+      opacity: 0.12;
+      line-height: 1;
+    }
+
+    /* ── INVESTIMENTO ── */
+    .investimento {
+      background: var(--navy);
+      padding: 110px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .investimento::before {
+      content: '';
+      position: absolute;
+      top: -160px;
+      right: -160px;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      border: 1px solid rgba(184,146,90,0.12);
+    }
+
+    .investimento::after {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      border: 1px solid rgba(184,146,90,0.08);
+    }
+
+    .inv-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .inv-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 2.9rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+
+    .inv-title strong {
+      font-weight: 600;
+      color: var(--gold-light);
+    }
+
+    .inv-text {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.9;
+      margin-bottom: 48px;
+    }
+
+    .inv-cta {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 40px;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+    }
+
+    .inv-cta:hover {
+      background: var(--gold);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .inv-price-box {
+      border: 1px solid rgba(184,146,90,0.3);
+      padding: 56px 48px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .inv-price-box .pre-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 20px;
+    }
+
+    .inv-price-box .price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .inv-price-box .price sup {
+      font-size: 1.8rem;
+      vertical-align: super;
+      font-weight: 400;
+    }
+
+    .inv-price-box .price-label {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 36px;
+    }
+
+    .inv-price-box hr {
+      border: none;
+      border-top: 1px solid rgba(184,146,90,0.2);
+      margin-bottom: 32px;
+    }
+
+    .inv-price-box ul {
+      list-style: none;
+      text-align: left;
+    }
+
+    .inv-price-box ul li {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      padding: 8px 0;
+      padding-left: 22px;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .inv-price-box ul li:last-child {
+      border-bottom: none;
+    }
+
+    .inv-price-box ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.75rem;
+    }
+
+    /* ── COMO FUNCIONA ── */
+    .como {
+      background: var(--cream);
+      padding: 110px 80px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 72px;
+      position: relative;
+    }
+
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: calc(12.5% + 20px);
+      right: calc(12.5% + 20px);
+      height: 1px;
+      background: linear-gradient(to right, var(--gold-light), var(--gold), var(--gold-light));
+      opacity: 0.35;
+    }
+
+    .step {
+      padding: 0 28px;
+      text-align: center;
+    }
+
+    .step-num {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--gold);
+      background: var(--cream);
+      position: relative;
+      z-index: 2;
+    }
+
+    .step h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .step p {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--gray-text);
+      line-height: 1.8;
+    }
+
+    /* ── CONTATO ── */
+    .contato {
+      background: var(--white);
+      padding: 110px 80px;
+      text-align: center;
+    }
+
+    .contato .section-header {
+      margin-bottom: 52px;
+    }
+
+    .contato-desc {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--gray-text);
+      max-width: 520px;
+      margin: 0 auto 52px;
+      line-height: 1.85;
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #25d366;
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 44px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .whatsapp-btn:hover {
+      background: #1ebe5b;
+      transform: translateY(-2px);
+    }
+
+    .whatsapp-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 40px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-logo span {
+      color: var(--gold-light);
+    }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-crm {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      header { padding: 18px 32px; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero::after { display: none; }
+
+      .hero-text {
+        padding: 130px 40px 60px;
+        text-align: center;
+      }
+
+      .hero-eyebrow { padding-left: 0; }
+      .hero-eyebrow::before { display: none; }
+      .hero-desc { margin: 0 auto 44px; }
+
+      .hero-image-wrap {
+        height: 60vw;
+        max-height: 480px;
+      }
+
+      .hero-badge { bottom: 20px; right: 20px; }
+
+      .sobre, .investimento {
+        grid-template-columns: 1fr;
+        gap: 52px;
+        padding: 80px 40px;
+      }
+
+      .diferenciais, .como, .contato {
+        padding: 80px 40px;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .steps-grid::before { display: none; }
+
+      footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 32px 40px;
+      }
+
+      .divider-strip { padding: 16px 32px; gap: 24px; }
+    }
+
+    @media (max-width: 640px) {
+      header { padding: 16px 20px; }
+      nav { display: none; }
+
+      .hero-text { padding: 110px 24px 48px; }
+
+      .sobre, .investimento, .diferenciais, .como, .contato {
+        padding: 72px 24px;
+      }
+
+      .cards-grid { grid-template-columns: 1fr; }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      footer { padding: 28px 24px; }
+      .divider-strip { padding: 14px 24px; gap: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Dra. <span>Karollyne</span></div>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#investimento">Investimento</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Ortopedia e Traumatologia</p>
+      <h1 class="hero-title">
+        Cuidado especializado,
+        <strong>no seu lar.</strong>
+      </h1>
+      <p class="hero-subtitle">Atendimento domiciliar exclusivo</p>
+      <p class="hero-desc">
+        Excelência técnica em Ortopedia e Traumatologia, com a humanização que você merece —
+        no conforto e privacidade do seu próprio ambiente.
+      </p>
+      <a href="#contato" class="hero-cta">Agendar consulta</a>
+    </div>
+
+    <div class="hero-image-wrap">
+      <img src="karol.jpg" alt="Dra. Karollyne — Ortopedista e Traumatologista" />
+      <div class="hero-badge">
+        <span class="amount"><sup>R$</sup>520</span>
+        <span class="label">Consulta<br>domiciliar</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER STRIP -->
+  <div class="divider-strip">
+    <span>Ortopedia &amp; Traumatologia</span>
+    <span class="dot"></span>
+    <span>Atendimento Domiciliar</span>
+    <span class="dot"></span>
+    <span>Diagnóstico Personalizado</span>
+    <span class="dot"></span>
+    <span>Excelência Técnica</span>
+    <span class="dot"></span>
+    <span>Abordagem Humanizada</span>
+  </div>
+
+  <!-- SOBRE -->
+  <section class="sobre" id="sobre">
+    <div class="sobre-content">
+      <p class="sobre-label">Sobre o atendimento</p>
+      <h2 class="sobre-title">
+        Um novo padrão de<br>
+        <em>cuidado ortopédico</em>
+      </h2>
+      <div class="sobre-text">
+        <p>
+          Ofereço consultas domiciliares em Ortopedia e Traumatologia voltadas a quem busca um
+          atendimento verdadeiramente exclusivo — com toda a seriedade técnica aliada à
+          conveniência e ao conforto do seu próprio espaço.
+        </p>
+        <p>
+          A modalidade domiciliar permite uma avaliação mais contextualizada e detalhada,
+          pois consigo observar o ambiente do paciente, seus hábitos e necessidades reais.
+          Isso contribui diretamente para maior precisão diagnóstica e condições clínicas mais
+          favoráveis à recuperação.
+        </p>
+        <p>
+          Cada consulta é conduzida com escuta atenta, tempo ampliado e foco total no paciente
+          — porque medicina de excelência começa pela relação de confiança.
+        </p>
+      </div>
+    </div>
+
+    <div class="sobre-visual">
+      <div class="sobre-box">
+        <span class="quote-mark">"</span>
+        <blockquote>
+          A proposta é oferecer uma experiência humanizada, sem abrir mão da excelência técnica que cada paciente merece.
+        </blockquote>
+        <cite>— Dra. Karollyne</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="diferenciais" id="diferenciais">
+    <div class="section-header">
+      <p class="label">O que está incluído</p>
+      <h2>Por que escolher o<br><em>atendimento domiciliar</em></h2>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-num">01</span>
+        <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="20" stroke="#b8925a" stroke-width="1.5"/>
+          <path d="M16 24h16M24 16v16" stroke="#b8925a" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Avaliação Ortopédica Aprofundada</h3>
+        <p>Exame clínico completo realizado no conforto e privacidade do seu ambiente, com tempo adequado para cada detalhe da sua condição.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-num">02</span>
+        <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="8" width="32" height="32" rx="2" stroke="#b8925a" stroke-width="1.5"/>
+          <path d="M16 20h16M16 28h10" stroke="#b8925a" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Tempo Ampliado de Consulta</h3>
+        <p>Escuta atenta e abordagem completamente individualizada. Sem pressa, sem filas — o tempo da consulta é dedicado exclusivamente a você.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-num">03</span>
+        <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 8L28 18H40L30 25L34 36L24 29L14 36L18 25L8 18H20L24 8Z" stroke="#b8925a" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+        <h3>Raciocínio Clínico Detalhado</h3>
+        <p>Definição de diagnóstico e conduta terapêutica personalizados, considerando o contexto real e os objetivos específicos de cada paciente.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-num">04</span>
+        <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 36C12 28 20 24 24 20C28 24 36 28 36 36" stroke="#b8925a" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="24" cy="16" r="6" stroke="#b8925a" stroke-width="1.5"/>
+        </svg>
+        <h3>Orientações Completas</h3>
+        <p>Foco na recuperação eficiente e na prevenção de lesões, com orientações práticas e adequadas ao seu estilo de vida e rotina.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-num">05</span>
+        <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="14" width="28" height="22" rx="2" stroke="#b8925a" stroke-width="1.5"/>
+          <path d="M18 14V11M30 14V11M10 21h28" stroke="#b8925a" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Solicitação e Interpretação de Exames</h3>
+        <p>Critério clínico rigoroso na indicação de exames complementares, com explicação clara dos resultados e seu impacto no tratamento.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-num">06</span>
+        <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 10C16.3 10 10 16.3 10 24C10 31.7 16.3 38 24 38C31.7 38 38 31.7 38 24" stroke="#b8925a" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M30 10L38 10L38 18" stroke="#b8925a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M28 20L38 10" stroke="#b8925a" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3>Visão Contextualizada do Paciente</h3>
+        <p>O ambiente domiciliar permite observar aspectos que uma clínica não revela, contribuindo para diagnósticos mais precisos e melhores desfechos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVESTIMENTO -->
+  <section class="investimento" id="investimento">
+    <div>
+      <p class="inv-label">Investimento</p>
+      <h2 class="inv-title">
+        Um cuidado que vale<br>
+        <strong>cada detalhe</strong>
+      </h2>
+      <p class="inv-text">
+        Caso deseje um atendimento com esse nível de cuidado e atenção, fico à disposição
+        para organizarmos um horário de forma completamente personalizada, de acordo com
+        a sua disponibilidade e localização.
+      </p>
+      <a href="#contato" class="inv-cta">Entrar em contato</a>
+    </div>
+
+    <div class="inv-price-box">
+      <p class="pre-label">Consulta domiciliar</p>
+      <p class="price"><sup>R$</sup>520</p>
+      <p class="price-label">por consulta</p>
+      <hr />
+      <ul>
+        <li>Avaliação ortopédica completa</li>
+        <li>Tempo de consulta ampliado</li>
+        <li>Diagnóstico e conduta personalizados</li>
+        <li>Orientações para recuperação</li>
+        <li>Solicitação de exames, se necessário</li>
+        <li>Realizado no conforto do seu lar</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="como" id="como-funciona">
+    <div class="section-header">
+      <p class="label">Como funciona</p>
+      <h2>Simples e <em>sem complicações</em></h2>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Entre em contato</h4>
+        <p>Envie uma mensagem pelo WhatsApp para iniciarmos a conversa e entender sua necessidade.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Agendamento</h4>
+        <p>Combinamos juntos o melhor horário e confirmamos o endereço do atendimento.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Consulta domiciliar</h4>
+        <p>A Dra. Karollyne realiza a avaliação completa no conforto da sua casa.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Conduta e acompanhamento</h4>
+        <p>Você recebe diagnóstico, orientações e encaminhamentos precisos para sua recuperação.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <div class="section-header">
+      <p class="label">Agende sua consulta</p>
+      <h2>Será um prazer<br><em>cuidar de você</em></h2>
+    </div>
+    <p class="contato-desc">
+      Entre em contato pelo WhatsApp para agendarmos um horário de forma personalizada.
+      Estou à disposição para tirar dúvidas e organizar o atendimento conforme a sua conveniência.
+    </p>
+    <a href="https://wa.me/5500000000000" class="whatsapp-btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Agendar pelo WhatsApp
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Dra. <span>Karollyne</span></div>
+    <p class="footer-copy">© 2025 · Todos os direitos reservados</p>
+    <p class="footer-crm">Ortopedia e Traumatologia</p>
+  </footer>
+
+</body>
+</html>
