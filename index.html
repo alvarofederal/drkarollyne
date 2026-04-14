@@ -1,4 +1,4 @@
-<\!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -25,7 +25,7 @@
     line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
   }
 
-  /* ── HEADER ── */
+  /* -- HEADER -- */
   header{
     position:fixed;top:0;left:0;right:0;z-index:300;
     padding:0 60px;height:70px;
@@ -48,7 +48,7 @@
   nav a:hover{color:var(--g100)}
   nav a:hover::after{width:100%}
 
-  /* ── HERO ── */
+  /* -- HERO -- */
   .hero{
     position:relative;min-height:100vh;
     display:grid;grid-template-columns:1fr 1fr;overflow:hidden;
@@ -71,7 +71,7 @@
   }
   .hero-text{
     position:relative;z-index:10;
-    padding:165px 60px 100px 80px;
+    padding:90px 60px 100px 80px;
     display:flex;flex-direction:column;justify-content:center;
   }
   .eyebrow{
@@ -118,7 +118,9 @@
   /* photo column */
   .hero-visual{
     position:relative;z-index:5;
-    display:flex;align-items:flex-end;justify-content:center;overflow:hidden;
+    display:flex;align-items:flex-end;justify-content:center;overflow:visible;
+    /* puxa a coluna para mais perto do centro */
+    margin-left:-60px;
   }
   .photo-inner{
     position:relative;height:100%;width:100%;
@@ -127,12 +129,16 @@
   /* PARALLAX: photo floats independently */
   .photo-inner img{
     position:relative;z-index:3;
-    height:92vh;max-height:880px;width:auto;
-    object-fit:cover;object-position:top center;
+    height:115vh;max-height:1100px;width:auto;
+    /* desloca levemente para o centro da tela */
+    margin-left:-40px;
+    object-fit:cover;object-position:center center;
     will-change:transform;
-    filter:brightness(1.06) contrast(1.04)
-      drop-shadow(-30px 0 70px rgba(0,0,0,.75))
-      drop-shadow(0 50px 90px rgba(0,0,0,.65));
+    image-rendering:high-quality;
+    -webkit-backface-visibility:hidden;
+    filter:brightness(1.08) contrast(1.05) saturate(1.04)
+      drop-shadow(-36px 0 80px rgba(0,0,0,.78))
+      drop-shadow(0 60px 100px rgba(0,0,0,.65));
   }
   .photo-glow{
     position:absolute;width:380px;height:700px;
@@ -153,7 +159,7 @@
   }
   .scroll-cue .line{width:34px;height:1px;background:linear-gradient(to right,transparent,rgba(96,196,123,.5))}
 
-  /* ── TICKER ── */
+  /* -- TICKER -- */
   .ticker{
     background:var(--g500);height:50px;overflow:hidden;
     box-shadow:0 8px 40px rgba(0,0,0,.5),inset 0 -1px 0 rgba(96,196,123,.2);
@@ -171,7 +177,7 @@
   }
   .td{width:4px;height:4px;border-radius:50%;background:rgba(168,221,184,.35)}
 
-  /* ── SEC COMMON ── */
+  /* -- SEC COMMON -- */
   .sec-label{
     font-size:.68rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
     color:var(--g200);margin-bottom:18px;display:flex;align-items:center;gap:12px;
@@ -183,7 +189,7 @@
   }
   .sec-title em{font-style:italic;font-weight:300;color:var(--g100)}
 
-  /* ── SOBRE ── */
+  /* -- SOBRE -- */
   .sobre{
     background:var(--g800);padding:130px 80px;
     display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
@@ -236,7 +242,7 @@
     font-size:.73rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--g200);
   }
 
-  /* ── PARALLAX BAND 1 ── */
+  /* -- PARALLAX BAND 1 -- */
   .pband{
     position:relative;height:500px;overflow:hidden;
     display:flex;align-items:center;justify-content:center;
@@ -278,7 +284,7 @@
     text-transform:uppercase;color:var(--g200);opacity:.8;
   }
 
-  /* ── DIFERENCIAIS ── */
+  /* -- DIFERENCIAIS -- */
   .difs{background:var(--g900);padding:130px 80px;position:relative;overflow:hidden}
   /* PARALLAX: giant ghost text */
   .dif-ghost{
@@ -320,7 +326,7 @@
   }
   .dc p{font-size:.87rem;font-weight:300;color:var(--textm);line-height:1.85}
 
-  /* ── PARALLAX BAND 2 (invertida) ── */
+  /* -- PARALLAX BAND 2 (invertida) -- */
   .pband2{
     position:relative;height:360px;overflow:hidden;
     display:flex;align-items:center;justify-content:center;
@@ -357,7 +363,7 @@
   }
   .pband2-content .txt em{font-style:italic;color:var(--g100)}
 
-  /* ── INVESTIMENTO ── */
+  /* -- INVESTIMENTO -- */
   .inv{
     background:var(--g800);padding:130px 80px;
     display:grid;grid-template-columns:1.15fr .85fr;gap:80px;align-items:center;
@@ -410,7 +416,7 @@
     margin-top:8px;flex-shrink:0;box-shadow:0 0 10px rgba(58,158,87,.6);
   }
 
-  /* ── COMO FUNCIONA ── */
+  /* -- COMO FUNCIONA -- */
   .como{background:var(--g900);padding:130px 80px;position:relative;overflow:hidden}
   .como-grid{
     display:grid;grid-template-columns:repeat(4,1fr);
@@ -435,7 +441,7 @@
   .step h4{font-family:'Cormorant Garamond',serif;font-size:1.14rem;font-weight:600;color:var(--white);margin-bottom:11px}
   .step p{font-size:.85rem;font-weight:300;color:var(--textm);line-height:1.8}
 
-  /* ── CONTATO ── */
+  /* -- CONTATO -- */
   .contato{
     background:var(--g800);padding:130px 80px;text-align:center;
     position:relative;overflow:hidden;
@@ -458,7 +464,7 @@
   .wa:hover{background:#1aab49;box-shadow:0 14px 48px rgba(22,138,60,.65);transform:translateY(-3px)}
   .wa svg{width:22px;height:22px;fill:currentColor}
 
-  /* ── FOOTER ── */
+  /* -- FOOTER -- */
   footer{
     background:var(--g900);border-top:1px solid rgba(58,158,87,.1);
     padding:36px 80px;display:flex;align-items:center;justify-content:space-between;
@@ -467,20 +473,23 @@
   .fl em{font-style:normal;color:var(--g200)}
   footer p{font-size:.73rem;color:var(--texts);letter-spacing:.07em}
 
-  /* ── REVEAL ── */
+  /* -- REVEAL -- */
   .rv{opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
   .rv.on{opacity:1;transform:translateY(0)}
   .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
-  /* ── RESPONSIVE ── */
+  /* -- RESPONSIVE -- */
   @media(max-width:1024px){
     header{padding:0 32px}
-    .hero{grid-template-columns:1fr}
-    .hero-text{padding:130px 40px 60px;text-align:center}
+    .hero{grid-template-columns:1fr;min-height:auto}
+    .hero-text{padding:110px 40px 52px;text-align:center}
     .eyebrow{justify-content:center}
-    .hero-desc{margin:0 auto 44px}
+    .hero-desc{margin:0 auto 40px;max-width:480px}
     .hero-actions{justify-content:center}
-    .hero-visual{height:60vw;max-height:500px}
+    /* foto tablet: ocupa bem a largura, sem margin */
+    .hero-visual{height:80vw;max-height:680px;margin-left:0}
+    .photo-inner img{height:100%;max-height:none;margin-left:0}
+    .scroll-cue{display:none}
     .sobre,.inv{grid-template-columns:1fr;gap:52px;padding:90px 40px}
     .difs,.como,.contato{padding:90px 40px}
     .dif-grid{grid-template-columns:1fr 1fr}
@@ -489,20 +498,44 @@
     footer{flex-wrap:wrap;gap:12px;padding:28px 40px}
   }
   @media(max-width:640px){
-    header{padding:0 20px}
+    header{padding:0 20px;height:60px}
     nav{display:none}
-    .hero-text{padding:110px 22px 48px}
-    .sobre,.inv,.difs,.como,.contato{padding:72px 22px}
+    .logo{font-size:1.1rem}
+    /* hero mobile: texto compacto + foto grande */
+    .hero-text{padding:86px 22px 36px;text-align:center}
+    .eyebrow{font-size:.62rem;gap:10px;margin-bottom:20px}
+    .hero-h1{font-size:2.6rem;margin-bottom:8px}
+    .hero-sub{font-size:1rem;margin-bottom:24px}
+    .hero-desc{font-size:.88rem;max-width:100%;margin-bottom:32px}
+    .hero-actions{flex-direction:column;align-items:center;gap:18px}
+    .btn-solid{width:100%;text-align:center;padding:16px 0}
+    /* foto mobile: quase full screen, centralizada */
+    .hero-visual{height:90vw;max-height:520px;margin-left:0;overflow:hidden}
+    .photo-inner{justify-content:center}
+    .photo-inner img{
+      height:110%;max-height:none;width:auto;
+      margin-left:0;
+      object-position:top center;
+    }
+    .photo-fade{height:120px}
+    /* seções */
+    .sobre,.inv,.difs,.como,.contato{padding:64px 20px}
+    .sobre-stats{grid-template-columns:repeat(3,1fr)}
     .dif-grid{grid-template-columns:1fr}
-    .como-grid{grid-template-columns:1fr}
-    .sobre-stats{grid-template-columns:1fr}
-    footer{padding:24px;justify-content:center;text-align:center}
+    .dc{padding:32px 26px}
+    .como-grid{grid-template-columns:1fr;gap:36px}
+    .pband{height:300px}
+    .pband-quote{font-size:clamp(1.8rem,6vw,2.8rem)}
+    .pband2{height:260px}
+    .pband2-content .txt{font-size:clamp(1.5rem,5vw,2.2rem)}
+    footer{padding:22px 20px;justify-content:center;text-align:center;gap:10px}
+    footer p{font-size:.7rem}
   }
   </style>
 </head>
 <body>
 
-<\!-- HEADER -->
+<!-- HEADER -->
 <header id="hdr">
   <div class="logo">Dra. <em>Karollyne</em></div>
   <nav>
@@ -513,7 +546,7 @@
   </nav>
 </header>
 
-<\!-- HERO -->
+<!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
@@ -549,12 +582,12 @@
   </div>
 </section>
 
-<\!-- TICKER -->
+<!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track" id="tick-track"></div>
 </div>
 
-<\!-- SOBRE -->
+<!-- SOBRE -->
 <section class="sobre" id="sobre">
   <div class="sobre-orb" id="sobre-orb"></div>
   <div style="position:relative;z-index:2">
@@ -567,7 +600,7 @@
     </div>
     <div class="sobre-stats rv d3">
       <div class="stat"><span class="val">100%</span><span class="key">Exclusivo</span></div>
-      <div class="stat"><span class="val">∞</span><span class="key">Atenção</span></div>
+      <div class="stat"><span class="val">&infin;</span><span class="key">Atenção</span></div>
       <div class="stat"><span class="val">+1h</span><span class="key">Consulta</span></div>
     </div>
   </div>
@@ -580,11 +613,11 @@
   </div>
 </section>
 
-<\!-- ===== PARALLAX BAND 1 ===== -->
+<!-- ===== PARALLAX BAND 1 ===== -->
 <div class="pband" id="pband1">
-  <\!-- layer de fundo que se move independente -->
+  <!-- layer de fundo que se move independente -->
   <div class="pband-bg" id="pband1-bg"></div>
-  <\!-- cruz decorativa que se move em velocidade diferente -->
+  <!-- cruz decorativa que se move em velocidade diferente -->
   <div class="pband-cross" id="pband1-cross">
     <svg viewBox="0 0 600 600" fill="none">
       <rect x="250" y="50" width="100" height="500" rx="8" fill="white"/>
@@ -598,9 +631,9 @@
   </div>
 </div>
 
-<\!-- DIFERENCIAIS -->
+<!-- DIFERENCIAIS -->
 <section class="difs" id="difs">
-  <\!-- texto gigante parallax -->
+  <!-- texto gigante parallax -->
   <div class="dif-ghost" id="dif-ghost">Ortopedia</div>
 
   <div class="dif-hdr">
@@ -664,7 +697,7 @@
   </div>
 </section>
 
-<\!-- ===== PARALLAX BAND 2 ===== -->
+<!-- ===== PARALLAX BAND 2 ===== -->
 <div class="pband2" id="pband2">
   <div class="pband2-layer" id="pband2-layer"></div>
   <div class="pband2-glow"></div>
@@ -674,7 +707,7 @@
   </div>
 </div>
 
-<\!-- INVESTIMENTO -->
+<!-- INVESTIMENTO -->
 <section class="inv" id="inv">
   <div class="inv-orb" id="inv-orb"></div>
   <div style="position:relative;z-index:2">
@@ -704,7 +737,7 @@
   </div>
 </section>
 
-<\!-- COMO FUNCIONA -->
+<!-- COMO FUNCIONA -->
 <section class="como" id="como">
   <p class="sec-label rv">Como funciona</p>
   <h2 class="sec-title rv d1">Simples e <em>sem complicações</em></h2>
@@ -732,7 +765,7 @@
   </div>
 </section>
 
-<\!-- CONTATO -->
+<!-- CONTATO -->
 <section class="contato" id="contato">
   <div class="ci">
     <p class="sec-label rv" style="justify-content:center">Agende sua consulta</p>
@@ -745,7 +778,7 @@
   </div>
 </section>
 
-<\!-- FOOTER -->
+<!-- FOOTER -->
 <footer>
   <div class="fl">Dra. <em>Karollyne</em></div>
   <p>© 2025 · Todos os direitos reservados</p>
@@ -754,17 +787,17 @@
 
 <script>
 (function(){
-  /* ── Header ── */
+  /* -- Header -- */
   const hdr = document.getElementById('hdr');
   window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 40), {passive:true});
 
-  /* ── Ticker ── */
+  /* -- Ticker -- */
   const items = ['Ortopedia & Traumatologia','Atendimento Domiciliar','Diagnóstico Personalizado','Excelência Técnica','Abordagem Humanizada','Consulta no Lar','Sem Filas · Sem Pressa'];
   const t = document.getElementById('tick-track');
   const row = items.map(s=>`<span class="ti"><span>${s}</span><span class="td"></span></span>`).join('');
   t.innerHTML = row+row;
 
-  /* ── Parallax elements ── */
+  /* -- Parallax elements -- */
   const photo      = document.getElementById('hero-photo');
   const sobreOrb   = document.getElementById('sobre-orb');
   const pb1bg      = document.getElementById('pband1-bg');
@@ -822,7 +855,7 @@
   window.addEventListener('scroll', tick, {passive:true});
   tick();
 
-  /* ── Mouse parallax no hero ── */
+  /* -- Mouse parallax no hero -- */
   const heroSec = document.getElementById('hero');
   heroSec.addEventListener('mousemove', e => {
     const dx = (e.clientX - innerWidth/2)  / innerWidth;
@@ -831,11 +864,11 @@
   });
   heroSec.addEventListener('mouseleave', tick);
 
-  /* ── Posiciona cruz no centro do band ── */
+  /* -- Posiciona cruz no centro do band -- */
   const cross = document.getElementById('pband1-cross');
   if(cross){ cross.style.cssText += ';left:50%;top:50%;transform:translate(-50%,-50%)'; }
 
-  /* ── Scroll reveal ── */
+  /* -- Scroll reveal -- */
   const rvs = document.querySelectorAll('.rv');
   const obs = new IntersectionObserver(entries=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); }});
